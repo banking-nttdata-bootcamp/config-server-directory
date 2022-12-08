@@ -3,15 +3,15 @@ server:
 spring:
   data:
     mongodb:
-      uri: mongodb+srv://bootcamp:eo4IaJNIbjk4f8ls@cluster0.hlzdcri.mongodb.net/movement?retryWrites=true&w=majority
+      uri: mongodb+srv://bootcamp:eo4IaJNIbjk4f8ls@cluster0.hlzdcri.mongodb.net/customer?retryWrites=true&w=majority
   cloud:
     config:
       server:
         git:
           default-label: master
-          uri: https://github.com/jhonatan-maza/bootcamp-movement
+          uri: https://github.com/banking-nttdata-bootcamp/customer
   application:
-    name: bootcamp-movement
+    name: bootcamp-customer
 
 eureka:
   client:
@@ -23,9 +23,12 @@ eureka:
       default-zone: http://localhost:8761/eureka
     prefer-ip-address: true
 
+springdoc:
+  packagesToScan: com.nttdata.bootcamp
+
 resilience4j.circuitbreaker:
   instances:
-    movement:
+    customer:
       registerHealthIndicator: true
       slidingWindowSize: 10
       permittedNumberOfCallsInHalfOpenState: 3
