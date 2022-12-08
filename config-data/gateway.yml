@@ -103,7 +103,7 @@ spring:
       ribbon:
         enabled: false
   application:
-    name: bootcamp-gateway
+    name: gateway
 
 springdoc:
   swagger-ui:
