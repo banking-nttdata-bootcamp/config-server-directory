@@ -109,20 +109,20 @@ springdoc:
   swagger-ui:
     urls:
       - name: customer
-        url: /bootcamp-customer/api-docs/
+        url: /customer/api-docs/
       - name: passive
-        url: /bootcamp-passive/api-docs/
+        url: /passive/api-docs/
       - name: active
-        url: /bootcamp-active/api-docs/
+        url: /active/api-docs/
       - name: deposit
-        url: /bootcamp-deposit/api-docs/
+        url: /deposit/api-docs/
       - name: payment
-        url: /bootcamp-payment/api-docs/
+        url: /payment/api-docs/
       - name: charge-consumption
-        url: /bootcamp-charge-consumption/api-docs/
+        url: /charge-consumption/api-docs/
       - name: withdrawal
-        url: /bootcamp-withdrawal/api-docs/
+        url: /withdrawal/api-docs/
       - name: balance
-        url: /bootcamp-balance/api-docs/
+        url: /balance/api-docs/
       - name: movement
-        url: /bootcamp-movement/api-docs/
+        url: /movement/api-docs/
