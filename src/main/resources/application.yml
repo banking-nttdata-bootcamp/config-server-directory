@@ -9,6 +9,6 @@ spring:
       server:
          git:
           default-label: master
-          uri: https://github.com/banking-nttdata-bootcamp/config-server-directory/blob/master
-          search-paths: config-data
+          uri: https://github.com/banking-nttdata-bootcamp/config-server-directory
+          search-paths: blob/master/config-data
       
