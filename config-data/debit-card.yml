@@ -3,21 +3,22 @@ server:
 spring:
   data:
     mongodb:
-      uri: mongodb+srv://bootcamp:eo4IaJNIbjk4f8ls@cluster0.hlzdcri.mongodb.net/movement?retryWrites=true&w=majority
+      uri: mongodb+srv://bootcamp:eo4IaJNIbjk4f8ls@cluster0.hlzdcri.mongodb.net/debit-card?retryWrites=true&w=majority
   cloud:
     config:
       server:
         git:
           default-label: master
-          uri: https://github.com/banking-nttdata-bootcamp/movement
+          uri: https://github.com/banking-nttdata-bootcamp/debit-card
   application:
-    name: movement
+    name: debit-card
 
 eureka:
   client:
     fetch-registry: true
     register-with-eureka: true
   instance:
+    #instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
     instance-id: ${spring.application.name}:${localhost:${random.value}}
     service-url:
       default-zone: http://localhost:8761/eureka
@@ -26,7 +27,7 @@ eureka:
 
 resilience4j.circuitbreaker:
   instances:
-    movement:
+    debit-card:
       registerHealthIndicator: true
       slidingWindowSize: 10
       permittedNumberOfCallsInHalfOpenState: 3
@@ -35,3 +36,4 @@ resilience4j.circuitbreaker:
       waitDurationInOpenState: 2s
       failureRateThreshold: 50
       eventConsumerBufferSize: 10
+
