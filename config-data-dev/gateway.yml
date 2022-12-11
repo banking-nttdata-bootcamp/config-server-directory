@@ -1,16 +1,6 @@
 server:
   port: '8090'
 
-eureka:
-  instance:
-    hostname: localhost
-  client:
-    fetch-registry: true
-    register-with-eureka: true
-    service-url:
-      defaultZone: http://localhost:8761/eureka
-    prefer-ip-address: true
-
 spring:
   cloud:
     config:
@@ -104,6 +94,16 @@ spring:
         enabled: false
   application:
     name: gateway
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+    prefer-ip-address: true
 
 springdoc:
   swagger-ui:
