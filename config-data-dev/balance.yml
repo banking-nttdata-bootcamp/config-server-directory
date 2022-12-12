@@ -27,6 +27,18 @@ eureka:
 springdoc:
   packagesToScan: com.nttdata.bootcamp
 
+management:
+  health:
+    circuitbrearks:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      show-details: always
+
 resilience4j.circuitbreaker:
   instances:
     balance:
