@@ -3,7 +3,7 @@ server:
 
 eureka:
   instance:
-    hostname: https://bnttdata-eureka-server.azurewebsites.net
+    hostname: localhost
   client:
     fetch-registry: false
     register-with-eureka: false
