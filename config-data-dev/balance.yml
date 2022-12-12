@@ -39,7 +39,8 @@ management:
     health:
       show-details: always
 
-resilience4j.circuitbreaker:
+resilience4j:
+  circuit-breaker-aspect-order: 1
   instances:
     balance:
       registerHealthIndicator: true
