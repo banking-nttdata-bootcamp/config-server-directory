@@ -4,15 +4,15 @@ server:
 spring:
   data:
     mongodb:
-      uri: mongodb+srv://bootcamp:eo4IaJNIbjk4f8ls@cluster0.hlzdcri.mongodb.net/transaction?retryWrites=true&w=majority
+      uri: mongodb+srv://bootcamp:eo4IaJNIbjk4f8ls@cluster0.hlzdcri.mongodb.net/passive?retryWrites=true&w=majority
   cloud:
     config:
       server:
         git:
           default-label: master
-          uri: https://github.com/banking-nttdata-bootcamp/withdrawal
+          uri: https://github.com/banking-nttdata-bootcamp/passive
   application:
-    name: withdrawal
+    name: passive
 
 eureka:
   client:
@@ -21,7 +21,7 @@ eureka:
   instance:
     instance-id: ${spring.application.name}:${localhost:${random.value}}
     service-url:
-      default-zone: https://bnttdata-eureka-server.azurewebsites.net/eureka
+      default-zone: http://dknttdata-eureka-server:8761/eureka
     prefer-ip-address: true
 
 springdoc:
@@ -29,7 +29,7 @@ springdoc:
 
 resilience4j.circuitbreaker:
   instances:
-    withdrawal:
+    passive:
       registerHealthIndicator: true
       slidingWindowSize: 10
       permittedNumberOfCallsInHalfOpenState: 3

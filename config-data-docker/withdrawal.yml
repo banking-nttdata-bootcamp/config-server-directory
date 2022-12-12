@@ -21,7 +21,7 @@ eureka:
   instance:
     instance-id: ${spring.application.name}:${localhost:${random.value}}
     service-url:
-      default-zone: https://bnttdata-eureka-server.azurewebsites.net/eureka
+      default-zone: http://dknttdata-eureka-server:8761/eureka
     prefer-ip-address: true
 
 springdoc:
