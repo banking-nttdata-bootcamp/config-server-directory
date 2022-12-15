@@ -78,6 +78,12 @@ spring:
             - Path=/movement/**
           filters:
             - RewritePath=/movement/(?<path>.*), /$\{path}
+        - id: debit-card
+          uri: lb://debit-card
+          predicates:
+            - Path=/debit-card/**
+          filters:
+            - RewritePath=/debit-card/(?<path>.*), /$\{path}
         - id: openapi
           uri: http://localhost:${server.port}
           predicates:
@@ -126,3 +132,5 @@ springdoc:
         url: /balance/api-docs/
       - name: movement
         url: /movement/api-docs/
+      - name: debit-card
+        url: /debit-card/api-docs/
