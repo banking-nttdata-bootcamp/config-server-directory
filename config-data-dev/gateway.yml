@@ -84,6 +84,12 @@ spring:
             - Path=/debit-card/**
           filters:
             - RewritePath=/debit-card/(?<path>.*), /$\{path}
+        - id: virtual-coin
+          uri: lb://virtual-coin
+          predicates:
+            - Path=/virtual-coin/**
+          filters:
+            - RewritePath=/virtual-coin(?<path>.*), /$\{path}
         - id: openapi
           uri: http://localhost:${server.port}
           predicates:
@@ -134,3 +140,5 @@ springdoc:
         url: /movement/api-docs/
       - name: debit-card
         url: /debit-card/api-docs/
+      - name: virtual-coin
+        url: /virtual-coin/api-docs/
